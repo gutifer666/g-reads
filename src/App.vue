@@ -8,18 +8,18 @@
 </template>
 
 <script>
-import BookList from './components/BookList'
+import BookList from "./components/BookList";
 
 export default {
   name: "App",
   components: {
-    BookList
+    BookList,
   },
 
   data() {
     return {
       books: [],
-      author:"escohotado"
+      author: "escohotado",
     };
   },
 
@@ -28,11 +28,13 @@ export default {
       fetch(
         `https://www.googleapis.com/books/v1/volumes?q=inauthor:${this.author}&key=AIzaSyCcFIyzEY0clAz89EnesNIKGI7ItRTxqzw`
       )
-        .then(response => {
+        .then((response) => {
           return response.json();
         })
-        .then(data => {
-          this.books = this.books.concat(data.items.map(item => item.volumeInfo));
+        .then((data) => {
+          this.books = this.books.concat(
+            data.items.map((item) => item.volumeInfo)
+          );
           console.log(this.books);
         });
     },
