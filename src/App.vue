@@ -8,9 +8,8 @@
             <div class="media">
               <div class="media-left">
                 <figure class="image is-128x128">
-                  <!-- <img v-if="!imageLinks.thumbnail" src="https://books.google.com/books/content?id=OpnZBAAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api" alt="Image Fake">
-                  <img v-else :src="book.imageLinks.thumbnail" alt="Real Image"> -->
-                  <img src="https://books.google.com/books/content?id=OpnZBAAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api" alt="Real Image">
+                  <img v-if="!book.imageLinks" src="https://books.google.es/googlebooks/images/no_cover_thumb.gif" alt="smiley face">
+                  <img v-else :src="book.imageLinks.thumbnail" alt="Real Image">
                 </figure>
               </div>
               <div class="media-content">
