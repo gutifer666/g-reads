@@ -31,13 +31,14 @@ export default {
   data() {
     return {
       books: [],
+      author:"escohotado"
     };
   },
 
   methods: {
     load() {
       fetch(
-        "https://www.googleapis.com/books/v1/volumes?q=inauthor:escohotado&key=AIzaSyCcFIyzEY0clAz89EnesNIKGI7ItRTxqzw"
+        `https://www.googleapis.com/books/v1/volumes?q=inauthor:${this.author}&key=AIzaSyCcFIyzEY0clAz89EnesNIKGI7ItRTxqzw`
       )
         .then(response => {
           return response.json();
