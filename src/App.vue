@@ -2,7 +2,12 @@
   <div id="app">
     <div class="section">
       <h1 class="title">Google Books API</h1>
-      <SearchAuthor :searchAuthor="searchAuthor"></SearchAuthor>
+      <div>
+        <input type="text" v-model="author" />
+
+        <button v-on:click="searchAuthor()">Search</button>
+      </div>
+      <!-- <SearchAuthor :searchAuthor="searchAuthor"></SearchAuthor> -->
       <BookList :books="books"></BookList>
     </div>
   </div>
@@ -10,13 +15,13 @@
 
 <script>
 import BookList from "./components/BookList";
-import SearchAuthor from "./components/SearchAuthor";
+// import SearchAuthor from "./components/SearchAuthor";
 
 export default {
   name: "App",
   components: {
     BookList,
-    SearchAuthor
+    // SearchAuthor,
   },
 
   data() {
@@ -27,9 +32,9 @@ export default {
   },
 
   methods: {
-    searchAuthor() {
-      this.books=[];
-      this.author = "escohotado";
+    searchAuthor(){
+      this.books = [];
+      
       this.load();
     },
 
@@ -48,9 +53,10 @@ export default {
         });
     },
   },
-    // mounted() {
-    //   this.load();
-    // },
+  // mounted() {
+  //   this.searchAuthor('pepe');
+  //   this.load();
+  // },
 };
 </script>
 
