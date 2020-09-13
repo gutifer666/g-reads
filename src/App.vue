@@ -2,6 +2,7 @@
   <div id="app">
     <div class="section">
       <h1 class="title">Google Books API</h1>
+      <SearchAuthor :searchAuthor="searchAuthor"></SearchAuthor>
       <BookList :books="books"></BookList>
     </div>
   </div>
@@ -9,21 +10,29 @@
 
 <script>
 import BookList from "./components/BookList";
+import SearchAuthor from "./components/SearchAuthor";
 
 export default {
   name: "App",
   components: {
     BookList,
+    SearchAuthor
   },
 
   data() {
     return {
       books: [],
-      author: "escohotado",
+      author: "",
     };
   },
 
   methods: {
+    searchAuthor() {
+      this.books=[];
+      this.author = "escohotado";
+      this.load();
+    },
+
     load() {
       fetch(
         `https://www.googleapis.com/books/v1/volumes?q=inauthor:${this.author}&key=AIzaSyCcFIyzEY0clAz89EnesNIKGI7ItRTxqzw`
@@ -35,14 +44,13 @@ export default {
           this.books = this.books.concat(
             data.items.map((item) => item.volumeInfo)
           );
-          console.log(this.books);
+          // console.log(this.books);
         });
     },
   },
-
-  mounted() {
-    this.load();
-  },
+    // mounted() {
+    //   this.load();
+    // },
 };
 </script>
 
