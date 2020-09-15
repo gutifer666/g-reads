@@ -7,7 +7,6 @@
 
         <button v-on:click="searchAuthor()">Search</button>
       </div>
-      <!-- <SearchAuthor :searchAuthor="searchAuthor"></SearchAuthor> -->
       <BookList :books="books"></BookList>
     </div>
   </div>
@@ -15,13 +14,10 @@
 
 <script>
 import BookList from "./components/BookList";
-// import SearchAuthor from "./components/SearchAuthor";
-
 export default {
   name: "App",
   components: {
     BookList,
-    // SearchAuthor,
   },
 
   data() {
@@ -49,12 +45,10 @@ export default {
           this.books = this.books.concat(
             data.items.map((item) => item.volumeInfo)
           );
-          // console.log(this.books);
         });
     },
   },
   // mounted() {
-  //   this.searchAuthor('pepe');
   //   this.load();
   // },
 };
