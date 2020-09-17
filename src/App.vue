@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <div class="section">
+    <div class="container">
       <h1 class="title">Google Books API</h1>
       <div class="field">
         <label class="label">Author Name</label>
@@ -13,17 +13,23 @@
           <button class="button is-link" v-on:click="searchAuthor()">Search</button>
         </div>
       </div>
-      <BookList :books="books"></BookList>
+
+      <!-- <author-form :author="author" :searchAuthor="searchAuthor"></author-form> -->
+
+      <book-list :books="books"></book-list>
+
     </div>
   </div>
 </template>
 
 <script>
 import BookList from "./components/BookList";
+// import AuthorForm from "./components/AuthorForm"
 export default {
   name: "App",
   components: {
     BookList,
+    // AuthorForm
   },
 
   data() {

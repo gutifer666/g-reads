@@ -1,6 +1,6 @@
 <template>
   <div class="container card-grid">
-    <BookItem v-for="book in books" :key="book.industryIdentifiers[0].identifier" :book="book"></BookItem>
+    <book-item v-for="book in books" :key="book.industryIdentifiers[0].identifier" :book="book"></book-item>
   </div>
 </template>
 
