@@ -5,6 +5,10 @@ Vue.use(Vuex)
 
 export default new Vuex.Store({
     state: {
-        authorStore: "escohotado"
+        authorStore: ""
+    },
+    mutations: {
+        CHANGE_AUTHOR: (state,newAuthor)=>state.authorStore = newAuthor
+        
     }
 })

@@ -2,17 +2,6 @@
   <div id="app">
     <div class="container">
       <h1 class="title">Google Books API</h1>
-      <!-- <div class="field">
-        <label class="label">Author Name</label>
-        <div class="control">
-          <input class="input" type="text" v-model="author" />
-        </div>
-      </div>
-      <div class="field">
-        <div class="control">
-          <button class="button is-link" v-on:click="searchAuthor()">Search</button>
-        </div>
-      </div> -->
 
       <author-form :searchAuthor="searchAuthor"></author-form>
 
