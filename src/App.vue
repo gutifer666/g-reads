@@ -2,7 +2,7 @@
   <div id="app">
     <div class="container">
       <h1 class="title">Google Books API</h1>
-      <div class="field">
+      <!-- <div class="field">
         <label class="label">Author Name</label>
         <div class="control">
           <input class="input" type="text" v-model="author" />
@@ -12,9 +12,9 @@
         <div class="control">
           <button class="button is-link" v-on:click="searchAuthor()">Search</button>
         </div>
-      </div>
+      </div> -->
 
-      <!-- <author-form :author="author" :searchAuthor="searchAuthor"></author-form> -->
+      <author-form :searchAuthor="searchAuthor"></author-form>
 
       <book-list :books="books"></book-list>
 
@@ -23,20 +23,24 @@
 </template>
 
 <script>
+import { mapState } from 'vuex'
+
 import BookList from "./components/BookList";
-// import AuthorForm from "./components/AuthorForm"
+import AuthorForm from "./components/AuthorForm"
 export default {
   name: "App",
   components: {
     BookList,
-    // AuthorForm
+    AuthorForm
   },
 
   data() {
     return {
       books: [],
-      author: "",
     };
+  },
+  computed:{
+    ...mapState(["authorStore"]),
   },
 
   methods: {
@@ -48,7 +52,7 @@ export default {
 
     load() {
       fetch(
-        `https://www.googleapis.com/books/v1/volumes?q=inauthor:${this.author}&key=AIzaSyCcFIyzEY0clAz89EnesNIKGI7ItRTxqzw`
+        `https://www.googleapis.com/books/v1/volumes?q=inauthor:${this.authorStore}&key=AIzaSyCcFIyzEY0clAz89EnesNIKGI7ItRTxqzw`
       )
         .then((response) => {
           return response.json();

@@ -1,10 +1,9 @@
 <template>
   <div>
-
     <div class="field">
       <label class="label">Author Name</label>
       <div class="control">
-        <input class="input" type="text" v-model="author" />
+        <input class="input" type="text" v-model="authorStore" />
       </div>
     </div>
 
@@ -14,16 +13,18 @@
       </div>
     </div>
   </div>
-  
 </template>
 
 <script>
+
+import { mapState } from 'vuex'
+
 export default {
   name: "AuthorForm",
-  props: [
-    "author",
-    "searchAuthor"
-    ],
+  props: ["searchAuthor"],
+  computed: {
+    ...mapState(["authorStore"]),
+  },
 };
 </script>
 
