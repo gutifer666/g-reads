@@ -16,6 +16,7 @@
 </template>
 
 <script>
+import { mapMutations } from 'vuex'
 
 export default {
   name: "AuthorForm",
@@ -26,8 +27,10 @@ export default {
     }
   },
   methods: {
+    ...mapMutations(['CHANGE_AUTHOR']),
     changeAuthor(){
-      this.$store.commit('CHANGE_AUTHOR', this.newAuthor);
+      // this.$store.commit('CHANGE_AUTHOR', this.newAuthor);
+      this.CHANGE_AUTHOR(this.newAuthor);
       this.newAuthor = '';
       this.searchAuthor();
     }
