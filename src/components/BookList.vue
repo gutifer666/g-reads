@@ -6,14 +6,19 @@
 
 <script>
 import BookItem from "@/components/BookItem.vue";
+import { mapState } from 'vuex'
+
 
 export default {
   name: "BookList",
-  props: ["books"],
+  // props: ["books"],
   components: {
     BookItem,
   },
-};
+  computed: {
+    ...mapState(["books"])
+  }
+}
 </script>
 
 <style>

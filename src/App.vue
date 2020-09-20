@@ -5,7 +5,7 @@
 
       <author-form :searchAuthor="searchAuthor"></author-form>
 
-      <book-list :books="books"></book-list>
+      <book-list></book-list>
 
     </div>
   </div>
@@ -23,13 +23,16 @@ export default {
     AuthorForm
   },
 
-  data() {
-    return {
-      books: [],
-    };
-  },
   computed:{
     ...mapState(["author"]),
+    books:{
+      get() {
+        return this.$store.state.books;
+      },
+      set(value) {
+        this.$store.commit('CHANGE_BOOKS',value);
+      }
+    }    
 
   },
 
@@ -54,9 +57,6 @@ export default {
         });
     },
   },
-  // mounted() {
-  //   this.load();
-  // },
 };
 </script>
 
