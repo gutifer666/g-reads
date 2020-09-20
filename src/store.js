@@ -10,5 +10,6 @@ export default new Vuex.Store({
     mutations: {
         CHANGE_AUTHOR: (state,newAuthor)=>state.authorStore = newAuthor
         
-    }
+    },
+
 })

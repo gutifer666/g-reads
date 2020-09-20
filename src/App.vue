@@ -30,6 +30,7 @@ export default {
   },
   computed:{
     ...mapState(["authorStore"]),
+
   },
 
   methods: {
@@ -41,7 +42,7 @@ export default {
 
     load() {
       fetch(
-        `https://www.googleapis.com/books/v1/volumes?q=inauthor:${this.authorStore}&key=AIzaSyCcFIyzEY0clAz89EnesNIKGI7ItRTxqzw`
+        `https://www.googleapis.com/books/v1/volumes?q=inauthor:`
       )
         .then((response) => {
           return response.json();
