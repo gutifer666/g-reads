@@ -11,7 +11,6 @@ import { mapState } from 'vuex'
 
 export default {
   name: "BookList",
-  // props: ["books"],
   components: {
     BookItem,
   },

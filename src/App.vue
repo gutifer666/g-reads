@@ -1,7 +1,8 @@
 <template>
   <div id="app">
     <div class="container">
-      <h1 class="title">Google Books API</h1>
+
+      <title-author></title-author>  
 
       <author-form :searchAuthor="searchAuthor"></author-form>
 
@@ -16,11 +17,14 @@ import { mapState } from 'vuex'
 
 import BookList from "./components/BookList";
 import AuthorForm from "./components/AuthorForm"
+import TitleAuthor from "./components/TitleAuthor"
+
 export default {
   name: "App",
   components: {
     BookList,
-    AuthorForm
+    AuthorForm,
+    TitleAuthor
   },
 
   computed:{
