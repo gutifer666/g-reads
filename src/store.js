@@ -5,11 +5,11 @@ Vue.use(Vuex)
 
 export default new Vuex.Store({
     state: {
-        authorStore: ""
+        author: ""
     },
     mutations: {
-        CHANGE_AUTHOR: (state,newAuthor)=>state.authorStore = newAuthor
+        CHANGE_AUTHOR: (state,payload)=>state.author = payload
         
-    },
+    },  
 
 })
