@@ -18,6 +18,7 @@
 </template>
 
 <script>
+
 export default {
   name: "AuthorForm",
   computed: {
@@ -31,9 +32,13 @@ export default {
     },
   },
   methods: {
-    showBooks: function() {
-      return this.$store.dispatch("GET_BOOKS")
+    showBooks: function () {
+      if (this.$store.state.author) {
+        return this.$store.dispatch("GET_BOOKS");
+      }else{
+      console.log('NO AUTHOR')
       }
+    },
   },
 };
 </script>

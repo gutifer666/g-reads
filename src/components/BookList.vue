@@ -6,8 +6,7 @@
 
 <script>
 import BookItem from "@/components/BookItem.vue";
-import { mapState } from 'vuex'
-
+import { mapState } from "vuex";
 
 export default {
   name: "BookList",
@@ -15,9 +14,9 @@ export default {
     BookItem,
   },
   computed: {
-    ...mapState(["books"])
-  }
-}
+    ...mapState(["books"]),
+  },
+};
 </script>
 
 <style>

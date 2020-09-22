@@ -1,7 +1,7 @@
 <template>
   <section class="hero">
     <div class="hero-body">
-      <h1 class="title">{{author}} tiene {{countBooks}} libros</h1>
+      <h1 class="title is-1 has-text-white has-background-primary has-text-centered">{{author.toUpperCase()}} TIENE {{countBooks}} LIBROS</h1>
     </div>
   </section>
 </template>
@@ -21,4 +21,5 @@ export default {
 </script>
 
 <style>
+
 </style>
