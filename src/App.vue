@@ -11,7 +11,6 @@
 </template>
 
 <script>
-
 import BookList from "./components/BookList";
 import AuthorForm from "./components/AuthorForm";
 import TitleAuthor from "./components/TitleAuthor";

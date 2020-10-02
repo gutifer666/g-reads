@@ -36,7 +36,7 @@ export default {
       if (this.$store.state.author) {
         return this.$store.dispatch("GET_BOOKS");
       }else{
-      console.log('NO AUTHOR')
+      alert('Introduzca un autor, por favor.');
       }
     },
   },
