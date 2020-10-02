@@ -22,12 +22,3 @@ npm run lint
 
 ### Customize configuration
 See [Configuration Reference](https://cli.vuejs.org/config/).
-
-
-
-
-
-39 Getters
-49 Mutations
-1:05 Fetch
-1:14 actions
